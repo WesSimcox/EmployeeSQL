@@ -11,15 +11,6 @@ const connection =mysql.createConnection({
     database: 'employeesdb'
 });
 
-// connection.connect(function (err) {
-//     if (err) {
-//       console.error('Error connecting to the database:', err);
-//       return;
-//     }
-//     console.log('Connected to the database!');
-//     connection.end();
-// });
-
 const start = async () => {
     connection.connect(function (err) {
         if (err) {
@@ -115,7 +106,7 @@ const addEmployee = () => {
         }
     ])
     .then((res) => {
-        connection.query('INSERT INTO employee SET ?', res, (err, result) => {
+        connection.query('INSERT INTO employees SET ?', res, (err, result) => {
             if (err) throw err;
             console.table(result);
             start();
@@ -159,7 +150,7 @@ const addDepartment = () => {
         }
     ])
     .then((res) => {
-        connection.query('INSERT INTO department SET ?', res, (err, result) => {
+        connection.query('INSERT INTO departments SET ?', res, (err, result) => {
             if (err) throw err;
             console.table(result);
             start();
