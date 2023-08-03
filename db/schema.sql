@@ -5,10 +5,10 @@ CREATE DATABASE employeesdb;
 USE employeesdb;
 
 CREATE TABLE departments (
-    id INT NOT NULL AUTO_INCREMENT,
-    department_alias VARCHAR(40),
-    PRIMARY KEY (id)
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  department_alias VARCHAR(255) NOT NULL
 );
+
 
 CREATE TABLE positions (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
